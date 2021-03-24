@@ -3,7 +3,7 @@ let chooseRule = "";
 let rounds = 1;
 let userScore = 0;
 let computerScore = 0;
-// username = prompt("What's your Name?");
+let username = prompt("What's your Name?");
 
 while (userScore <= 5 && computerScore <= 5) {
   chooseRule = prompt("Type []Rock []Paper or []Scissors");
@@ -41,4 +41,10 @@ while (userScore <= 5 && computerScore <= 5) {
 
   playRound(chooseRule, computerSelection);
   rounds++;
+}
+
+if(userScore === 5) {
+  console.log(`${userName} Won!`);
+} else {
+  console.log('Computer Won!');
 }
