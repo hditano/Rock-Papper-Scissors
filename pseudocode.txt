@@ -1,0 +1,4 @@
+[X] Make user input his/her name
+[X] Make user input between Rock, Paper or Scissors
+[X] Output Msg saying "You Won, Tie or You Lose"
+
