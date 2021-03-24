@@ -35,7 +35,7 @@ while (userScore <= 5 && computerScore <= 5) {
 
   function playComputer() {
     const rules = ["Rock", "Paper", "Scissors"];
-    let result = Math.floor(Math.random() * 4);
+    let result = Math.floor(Math.random() * 3 );
     return rules[result];
   }
 
