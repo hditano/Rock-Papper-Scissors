@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #E3E3E3;
 }
 
 .main-container {
@@ -15,7 +16,9 @@ body {
 .main-container .main-title {
   width: 600px;
   height: 50px;
-  background: green;
+  background-color: #555353;
+  color: #FFFFFF;
+  border: 2px solid #b9b9b9;
 }
 
 .main-title {
@@ -52,6 +55,7 @@ body {
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  color: #454545;
 
 }
 
@@ -61,6 +65,7 @@ body {
   width: 240px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
+  font-size: 1.5em;
 }
 
 .play-btn {
@@ -73,7 +78,7 @@ body {
 
 .rock-btn, .paper-btn, .scissors-btn {
   color: #333;
-  border-radius: 15px;
+  border-radius: 5px;
   width: 100px;
   height: 40px;
   margin: 0px 20px;
