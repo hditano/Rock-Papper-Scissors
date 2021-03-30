@@ -4,9 +4,6 @@ let userScore = 0;
 let computerScore = 0;
 // let userName = prompt('Please type your name!');
 
-
-
-
 function playRPS() {
   while (userScore < 5 && computerScore < 5) {
     chooseRule = prompt(`Hello ${userName}!! Please type []Rock []Paper or []Scissors`);
