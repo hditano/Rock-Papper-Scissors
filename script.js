@@ -2,7 +2,7 @@ let chooseRule = "";
 let rounds = 1;
 let userScore = 0;
 let computerScore = 0;
-let userName = prompt('Please type your name!');
+// let userName = prompt('Please type your name!');
 
 function playRPS() {
   while (userScore < 5 && computerScore < 5) {
@@ -49,4 +49,4 @@ function playRPS() {
   }
 }
 
-playRPS();
+// playRPS();

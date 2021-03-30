@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container .main-title {
+  width: 600px;
+  height: 50px;
+  background: green;
+}
+
+.main-title {
+  text-align: center;
+}
+
+
+.game-counter {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.player-counter, .computer-counter {
+  margin: 20px;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  line-height: 150px;
+  color: black;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  border: 1px solid green;
+}
+
+.names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.player-name, .computer-name {
+  text-align: center;
+  height: 0px;
+  width: 240px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.rock-btn, .paper-btn, .scissors-btn {
+  color: #333;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  margin: 0px 20px;
+
+}
