@@ -105,9 +105,15 @@ function startGame() {
   document.body.appendChild(startButton);
 }
 
-// function updateCounter(counter) {
-//   console.log(counter);
-// }
+function checkWinner (user) {
+  if(user === 'player' && userScore >= 5) {
+    logs.textContent = "You Won!!";
+    gameButtons.style.visibility = 'hidden';
+  } else if (user === 'computer' && computerScore >= 5) {
+    logs.textContent = "Computer Won!!";
+    gameButtons.style.visibility = 'hidden';
+  }
+}
 
 function startRound() {
   playComputer();
@@ -134,9 +140,11 @@ function playRound(playerSelection, computerSelection) {
     userScore++;
     playerCounter.textContent = userScore;
     logs.textContent = ` Player: ${playerSelection} *** Computer: ${computerSelection} *** Result = You Won`;
+    checkWinner('player');
   } else {
     computerScore++;
     computerCounter.textContent = computerScore;
     logs.textContent = ` Player: ${playerSelection} *** Computer: ${computerSelection} *** Result = You Lost`;
+    checkWinner('computer');
   }
 }
