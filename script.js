@@ -54,15 +54,28 @@
 const submitBtn = document.querySelector(".submit-name");
 const textName = document.querySelector(".text-name");
 const playerName = document.querySelector(".player-name");
+const nameContainer = document.querySelector('.name-container');
 
 submitBtn.addEventListener('click', (e) => {
   console.log(e);
   if (textName !== "") {
     changeText(textName, playerName);
+    document.querySelector('.name-container').style.visibility = 'hidden';
+    startGame();
   }
 });
 
 // Universal function to changeText
 function changeText(origin, destination) {
   return destination.textContent = origin.value;
+}
+
+function startGame() {
+  const startButton = document.createElement('div');
+  startButton.setAttribute('class', 'main-startGame');
+  startButton.innerHTML = "<a href='#' class='btn-class start-game'>Start Game</a> <a href='#' class='btn-class reset-game'>Reset Game</a>";
+  startButton.style.visibility = 'visible';
+  startButton.style.textDecoration = 'none';
+  document.body.appendChild(startButton);
+
 }
