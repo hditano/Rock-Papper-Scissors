@@ -86,19 +86,25 @@ body {
 
 .game-logs {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  margin: 0px;
+  align-items: center;
+  margin-top: 10px;
   padding: 0px;
 }
 
 .logs {
   width: 440px;
   height: 30px;
+  margin-top: -15px;
   border: 2px solid #333333;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.log-title {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: -15px;
 }
 
 .main-startGame {
@@ -169,10 +175,39 @@ body {
 	top:1px;
 }
 
-.submit-name, .start-game, .reset-game {
+.submit-name, .start-game {
   width: 127px;
   height: 30px;
   line-height: 30px;
   font-size: 20px;
   text-decoration: none !important;
+}
+
+.reset-game {
+  width: 127px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  text-decoration: none !important;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items: flex-end;
+  margin: 0px;
+  padding: 0px;
+  flex-shrink: 0;
+  margin-top: 270px;
+}
+
+.link-footer {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+}
+
+.link-github {
+  text-decoration: none;
+  color: #333333;
 }

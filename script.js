@@ -58,6 +58,7 @@ const textName = document.querySelector(".text-name");
 const playerName = document.querySelector(".player-name");
 const nameContainer = document.querySelector(".name-container");
 const startRoundBtn = document.querySelector(".start-game");
+const resetBtn = document.querySelector('.reset-game');
 const gameButtons = document.querySelector('.play-btn');
 const rockBtn = document.querySelector(".rock-btn");
 const paperBtn = document.querySelector(".paper-btn");
@@ -71,11 +72,14 @@ let computerScore = 0;
 submitBtn.addEventListener("click", () => {
   if (textName !== "") {
     changeText(textName, playerName);
-    document.querySelector(".name-container").style.visibility = "hidden";
+    nameContainer.style.visibility = "hidden";
+    resetBtn.style.visibility = 'visible';
     gameButtons.style.visibility = 'visible';
-    startGame();
+    // startGame();
   }
 });
+
+
 
 
 rockBtn.addEventListener("click", (e) => {
@@ -90,20 +94,22 @@ scissorsBtn.addEventListener("click", (e) => {
   playRound(e.target.innerText, playComputer());
 });
 
+resetBtn.addEventListener("click", resetGame);
+
 // Universal function to changeText
 function changeText(origin, destination) {
   return (destination.textContent = origin.value);
 }
 
-function startGame() {
-  const startButton = document.createElement("div");
-  startButton.setAttribute("class", "main-startGame");
-  startButton.innerHTML =
-    "<a href='#' class='btn-class reset-game'>Reset Game</a>";
-  startButton.style.visibility = "visible";
-  startButton.style.textDecoration = "none";
-  document.body.appendChild(startButton);
-}
+// function startGame() {
+//   const startButton = document.createElement("div");
+//   startButton.setAttribute("class", "main-startGame");
+//   startButton.innerHTML =
+//     "<a href='#' class='btn-class reset-game'>Reset Game</a>";
+//   startButton.style.visibility = "visible";
+//   startButton.style.textDecoration = "none";
+//   document.body.appendChild(startButton);
+// }
 
 function checkWinner (user) {
   if(user === 'player' && userScore >= 5) {
@@ -114,6 +120,18 @@ function checkWinner (user) {
     gameButtons.style.visibility = 'hidden';
   }
 }
+
+function resetGame() {
+  nameContainer.style.visibility = 'visible';
+  userScore = 0;
+  computerScore = 0;
+  computerCounter.textContent = computerScore;
+  playerCounter.textContent = userScore;
+  logs.textContent = '';
+  textName.value = ' ';
+
+}
+
 
 function startRound() {
   playComputer();
