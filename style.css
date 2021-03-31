@@ -46,7 +46,7 @@ body {
   font-weight: bold;
   font-size: 3em;
   text-align: center;
-  border: 1px solid green;
+  border: 1px solid #333333;
 }
 
 .names {
@@ -72,6 +72,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
 
 .name-container {
@@ -81,6 +82,23 @@ body {
   align-items: flex-end;
   margin: 0px;
   padding: 0px;
+}
+
+.game-logs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0px;
+  padding: 0px;
+}
+
+.logs {
+  width: 440px;
+  height: 30px;
+  border: 2px solid #333333;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main-startGame {
