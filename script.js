@@ -1,57 +1,5 @@
-// let chooseRule = "";
-// let rounds = 1;
-// let userScore = 0;
-// let computerScore = 0;
-// let userName = prompt("Please type your name!");
 
-// function playRPS() {
-//   while (userScore < 5 && computerScore < 5) {
-//     chooseRule = prompt(
-//       `Hello ${userName}!! Please type []Rock []Paper or []Scissors`
-//     );
-
-//     console.log(`Game Round ${rounds}`);
-//     console.log(`User Score: ${userScore} Computer Score: ${computerScore}`);
-//     function playRound(chooseRule, computerSelection) {
-//       if (
-//         (chooseRule === "Rock" && computerSelection === "Rock") ||
-//         (chooseRule === "Scissors" && computerSelection === "Scissors") ||
-//         (chooseRule === "Paper" && computerSelection === "Paper")
-//       ) {
-//         return console.log(chooseRule, computerSelection, "You are Tied!!");
-//       } else if (
-//         (chooseRule === "Rock" && computerSelection === "Scissors") ||
-//         (chooseRule === "Scissors" && computerSelection === "Paper") ||
-//         (chooseRule === "Paper" && computerSelection === "Rock")
-//       ) {
-//         userScore++;
-//         return console.log(chooseRule, computerSelection, "You Won!!");
-//       } else {
-//         computerScore++;
-//         return console.log(chooseRule, computerSelection, "You Lost!!");
-//       }
-//     }
-//     const computerSelection = playComputer();
-
-//     function playComputer() {
-//       const rules = ["Rock", "Paper", "Scissors"];
-//       let result = Math.floor(Math.random() * 3);
-//       return rules[result];
-//     }
-
-//     playRound(chooseRule, computerSelection);
-//     rounds++;
-//   }
-
-//   if (userScore >= 5 && computerScore < 5) {
-//     console.log(`${userName} Won!`);
-//     console.log(`User Score: ${userScore} Computer Score: ${computerScore}`);
-//   } else if (userScore < 5 && computerScore >= 5) {
-//     console.log("Computer Won!");
-//   }
-// }
-
-// playRPS();
+// Variables
 
 const submitBtn = document.querySelector(".submit-name");
 const textName = document.querySelector(".text-name");
@@ -69,17 +17,17 @@ const logs = document.querySelector(".logs");
 let userScore = 0;
 let computerScore = 0;
 
+
+//Event Listeners for every button
+
 submitBtn.addEventListener("click", () => {
   if (textName !== "") {
     changeText(textName, playerName);
     nameContainer.style.visibility = "hidden";
     resetBtn.style.visibility = 'visible';
     gameButtons.style.visibility = 'visible';
-    // startGame();
   }
 });
-
-
 
 
 rockBtn.addEventListener("click", (e) => {
@@ -96,21 +44,13 @@ scissorsBtn.addEventListener("click", (e) => {
 
 resetBtn.addEventListener("click", resetGame);
 
+
 // Universal function to changeText
 function changeText(origin, destination) {
   return (destination.textContent = origin.value);
 }
 
-// function startGame() {
-//   const startButton = document.createElement("div");
-//   startButton.setAttribute("class", "main-startGame");
-//   startButton.innerHTML =
-//     "<a href='#' class='btn-class reset-game'>Reset Game</a>";
-//   startButton.style.visibility = "visible";
-//   startButton.style.textDecoration = "none";
-//   document.body.appendChild(startButton);
-// }
-
+// Checks Winner.
 function checkWinner (user) {
   if(user === 'player' && userScore >= 5) {
     logs.textContent = "You Won!!";
@@ -121,6 +61,7 @@ function checkWinner (user) {
   }
 }
 
+// Resets Game to initial state
 function resetGame() {
   nameContainer.style.visibility = 'visible';
   userScore = 0;
@@ -133,16 +74,14 @@ function resetGame() {
 }
 
 
-function startRound() {
-  playComputer();
-}
-
+// Computer random logic for Rock, Paper and Scissors
 function playComputer() {
   const rules = ["Rock", "Paper", "Scissors"];
   let result = Math.floor(Math.random() * 3);
   return rules[result];
 }
 
+// Checks Player selection and computer Selector to compare them for score points
 function playRound(playerSelection, computerSelection) {
   if (
     (playerSelection === "Rock" && computerSelection === "Rock") ||
